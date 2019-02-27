@@ -10,10 +10,10 @@ function SearchForm (props) {
         <input name="formValue" type="text" value={formValue} placeholder="Find Articles" onChange={handleChange} onBlur={handleBlur}></input>
         <input type="submit" onClick = {handleSubmit}/>
       </form>
-      {(focusDisplay) ? (
-        <SearchResults suggestionsArray={suggestionsArray} handleClick={handleClick}/>
-      ) : null}
     </div>
+    {(focusDisplay) ? (
+      <SearchResults suggestionsArray={suggestionsArray} handleClick={handleClick}/>
+    ) : null}
     </div>
   )
 }

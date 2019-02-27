@@ -43,19 +43,31 @@ class App extends Component {
     this.fetchData();
   }
 
-  async handleChange (ev) {
-    let value = ev.target.value;
-    this.setState({
-      formValue: value
-    })
-    if (value.length >= 3) {
-      let suggestionsArray = await getSearchResults(value);
-      console.log(value);
-      console.log(suggestionsArray);
+  async updateSearchSuggestions() {
+    let value = this.state.formValue;
+    let suggestionsArray = await getSearchResults(value);
+    if (this.state.focusDisplay) {
       this.setState({
         suggestionsArray: suggestionsArray
+      });
+    }
+  }
+
+  handleChange (ev) {
+    let value = ev.target.value;
+    if (value.length > 3) {
+      this.setState({
+        focusDisplay: true
+      })
+    } else {
+      this.setState({
+        focusDisplay: false
       })
     }
+    this.setState({
+      formValue: value
+    });
+    this.updateSearchSuggestions();
   }
 
   handleClick(ev,value) {

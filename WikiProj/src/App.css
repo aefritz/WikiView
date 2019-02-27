@@ -1,21 +1,26 @@
 .searchSuggestions {
-  background: yellow;
+  position: relative;
+  background: rgba(255,255,0,.8);
   width: 200px;
   height: 200px;
-  position: relative;
+  margin: 0 auto;
   top: 50px;
 }
 .formContainer1 {
   display: flex;
   justify-content: center;
+  height: 100px;
+  overflow: visible;
 }
 .formContainer2 {
-  background: #D7D;
+  background: rgba(208,112,208,.4);
   position: absolute;
   display: flex;
   justify-content: center;
   position: absolute;
   width: 80%;
+  height: 100px;
+  overflow: visible;
 }
 h1 {
   font-size: 60px;
