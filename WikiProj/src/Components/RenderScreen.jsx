@@ -25,7 +25,7 @@ function shuffle(array) {
 }
 
 function RenderScreen (props) {
-  let windowHeight = window.innerHeight - 226;
+  let windowHeight = window.innerHeight - 280;
   let {linkData, formValue, handleClick} = props;
   linkData = linkData.map(link => {
     let percentile = 100*linkData.indexOf(link)/linkData.length;

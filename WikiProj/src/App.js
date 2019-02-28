@@ -9,6 +9,9 @@ import RenderScreen from './Components/RenderScreen';
 import getSearchResults from './Services/getSearchResults';
 import LoadingPage from './Components/LoadingPage';
 import Footer from './Components/Footer';
+import About from './Components/About';
+import Challenge from './Components/Challenge';
+import getRandomPage from './Services/getRandomPage'
 
 
 class App extends Component {
@@ -19,6 +22,8 @@ class App extends Component {
       linkData: [],
       focusDisplay: false,
       loading: true,
+      challenge: false,
+      currentPage: "The Handmaid's Tale",
       suggestionsArray: [],
       formValue: "The Handmaid's Tale"
     }
@@ -26,6 +31,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.clickChallenge = this.clickChallenge.bind(this);
   }
 
   async fetchData() {
@@ -78,10 +84,26 @@ class App extends Component {
   }
 
   handleSubmit (ev) {
+    let value = this.state.formValue;
     this.setState({
-      focusDisplay: false
+      focusDisplay: false,
+      currentPage: value
     })
     this.fetchData();
+  }
+
+  async clickChallenge() {
+    this.setState({
+      loading: true
+    })
+    let randomPage = await getRandomPage();
+    let data = await getData(randomPage);
+    this.setState({
+      loading: false,
+      formValue: randomPage,
+      linkData: data,
+      currentPage: randomPage
+    })
   }
 
   handleBlur (ev) {
@@ -99,11 +121,18 @@ class App extends Component {
 
           <Header />
 
+          <div className="navBar">
+            <Link to="/">Main</Link>
+            <Link to="/about">About</Link>
+            <Link to="/challenge">Challenge</Link>
+          </div>
 
-          
-          {this.state.loading && <LoadingPage/>}
+
+          <Route exact path="/" render={() => <div>{this.state.loading && <LoadingPage/>}
           {!this.state.loading && <SearchForm formValue={this.state.formValue} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleBlur={this.handleBlur} focusDisplay={this.state.focusDisplay} suggestionsArray={this.state.suggestionsArray} handleClick={this.handleClick}/>}
-          {!this.state.loading && <RenderScreen linkData={this.state.linkData} formValue={this.state.formValue} handleClick={this.handleClick}/>}
+          {!this.state.loading && <RenderScreen linkData={this.state.linkData} formValue={this.state.formValue} handleClick={this.handleClick}/>}</div>}/>
+          <Route path = "/about" component={About} />
+          <Route path = "/challenge" render={() => <Challenge clickChallenge={this.clickChallenge}/>} />
 
 
 
