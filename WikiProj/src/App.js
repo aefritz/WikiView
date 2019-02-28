@@ -8,6 +8,7 @@ import SearchForm from './Components/SearchForm';
 import RenderScreen from './Components/RenderScreen';
 import getSearchResults from './Services/getSearchResults';
 import LoadingPage from './Components/LoadingPage';
+import Footer from './Components/Footer';
 
 
 class App extends Component {
@@ -95,10 +96,23 @@ class App extends Component {
     return (
       <div className="App">
         <div className="gradient">
+
           <Header />
+
+          <nav>
+            <Link to="/about">About</Link>
+            <Link to="/challenge">Challenge</Link>
+          </nav>
+
+
           {this.state.loading && <LoadingPage/>}
           {!this.state.loading && <SearchForm formValue={this.state.formValue} handleChange={this.handleChange} handleSubmit={this.handleSubmit} handleBlur={this.handleBlur} focusDisplay={this.state.focusDisplay} suggestionsArray={this.state.suggestionsArray} handleClick={this.handleClick}/>}
           {!this.state.loading && <RenderScreen linkData={this.state.linkData} formValue={this.state.formValue} handleClick={this.handleClick}/>}
+
+
+
+          <Footer />
+
         </div>
       </div>
     );

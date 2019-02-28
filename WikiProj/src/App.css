@@ -2,7 +2,7 @@
   position: relative;
   background: rgba(255,255,0,.8);
   width: 200px;
-  height: 200px;
+  height: 120px;
   margin: 0 auto;
   top: 50px;
 }
@@ -12,7 +12,7 @@
 .formContainer1 {
   display: flex;
   justify-content: center;
-  height: 100px;
+  height: 65px;
   overflow: visible;
 }
 .formContainer2 {
@@ -22,13 +22,23 @@
   justify-content: center;
   position: absolute;
   width: 80%;
-  height: 100px;
+  height: 65px;
   overflow: visible;
 }
+.footer {
+  background: rgba(208,112,208,.4);
+  margin: -20px;
+}
+.footer > p {
+  font-size: 10px;
+}
 h1 {
-  font-size: 60px;
-  margin: 0;
+  font-size: 55px;
+  margin: 10px;
   padding: 0;
+  color: rgba(0,0,0,1);
+  letter-spacing: .08em;
+  font-weight: 500;
 }
 h2 {
   margin: 30px;
@@ -51,7 +61,7 @@ span:hover{
   text-decoration: underline;
 }
 .renderContainer {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
 }
 .App {
@@ -60,7 +70,7 @@ span:hover{
   text-align: center;
   background: url(./Components/map.jpg);
   background-size: cover;
-  padding: 20px;
+  padding: 25px;
   font-family: helvetica;
 }
 .gradient {
