@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header (props) {
   return (<div>
-    <h1>Enter the WikiTrap</h1>
+    <h1>WikiView</h1>
   </div>)
 }
 
