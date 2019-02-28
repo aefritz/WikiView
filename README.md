@@ -70,4 +70,6 @@ This strategy allows the most important topics to appear in the middle of the cl
 
 ## Next Steps
 
+Right now, the app processes most topic requests (95%) without issue. However, every few requests throws a "Nothing to repeat" error in the RegExp search in services.js. I am looking into the root of this issue. My research right now suggests that there might be improper characters being passed as an argument.
+
 The next step I would like to take is to integrate a challenge into the app. Users might, for example, be taken to a random page and asked to find their way to a target page (say 'existentialism') in a minimum number of steps.
