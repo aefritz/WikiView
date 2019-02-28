@@ -99,10 +99,6 @@ class App extends Component {
 
           <Header />
 
-          <nav>
-            <Link to="/about">About</Link>
-            <Link to="/challenge">Challenge</Link>
-          </nav>
 
 
           {this.state.loading && <LoadingPage/>}
