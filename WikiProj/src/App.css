@@ -6,6 +6,9 @@
   margin: 0 auto;
   top: 50px;
 }
+.searchSuggestions > p:hover {
+  text-decoration: underline;
+}
 .formContainer1 {
   display: flex;
   justify-content: center;

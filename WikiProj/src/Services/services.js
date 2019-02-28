@@ -3,15 +3,12 @@ import axios from 'axios';
 async function getData (article) {
   let pageId = 0;
   const linkData = await getWikipediaPageLinks(formatTextForQuery(article));
-  console.log(linkData);
   const articleText = await getArticleText(pageId);
-  console.log(articleText);
   let cleanedArray = getCounts (linkData, articleText);
   cleanedArray = sortArray(cleanedArray);
   if (cleanedArray.length > 100) {
     cleanedArray.splice(100, cleanedArray.length - 100);
   }
-  console.log(cleanedArray);
   return cleanedArray;
 
 

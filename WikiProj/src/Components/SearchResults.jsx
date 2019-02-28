@@ -2,10 +2,9 @@ import React from 'react';
 
 function SearchResults (props) {
   let {suggestionsArray, handleClick} = props;
-  console.log(suggestionsArray)
   return (
     <div className="searchSuggestions">
-      {suggestionsArray.map(suggestion => <p onClick={(ev)=>handleClick(ev,suggestion)}>{suggestion}</p>)}
+      {suggestionsArray.map(suggestion => <p key={suggestion} onClick={(ev)=>handleClick(ev,suggestion)}>{suggestion}</p>)}
     </div>
   )
 }

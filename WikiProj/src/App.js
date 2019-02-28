@@ -43,8 +43,7 @@ class App extends Component {
     this.fetchData();
   }
 
-  async updateSearchSuggestions() {
-    let value = this.state.formValue;
+  async updateSearchSuggestions(value) {
     let suggestionsArray = await getSearchResults(value);
     if (this.state.focusDisplay) {
       this.setState({
@@ -55,19 +54,20 @@ class App extends Component {
 
   handleChange (ev) {
     let value = ev.target.value;
+    this.setState({
+      formValue: value
+    });
     if (value.length > 3) {
       this.setState({
         focusDisplay: true
       })
+      this.updateSearchSuggestions(value);
     } else {
       this.setState({
-        focusDisplay: false
+        focusDisplay: false,
+        suggestionsArray: []
       })
     }
-    this.setState({
-      formValue: value
-    });
-    this.updateSearchSuggestions();
   }
 
   handleClick(ev,value) {
@@ -77,15 +77,18 @@ class App extends Component {
   }
 
   handleSubmit (ev) {
-    ev.preventDefault();
+    this.setState({
+      focusDisplay: false
+    })
     this.fetchData();
   }
 
   handleBlur (ev) {
-    this.setState({
-      focusDisplay: false,
-      suggestionsArray: []
-    });
+    if (this.state.formValue.length <= 3) {
+      this.setState({
+        focusDisplay: false
+      });
+    }
   }
 
   render() {

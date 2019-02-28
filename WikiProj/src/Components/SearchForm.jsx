@@ -7,7 +7,7 @@ function SearchForm (props) {
     <div className="formContainer1">
     <div className="formContainer2">
       <form>
-        <input name="formValue" type="text" value={formValue} placeholder="Find Articles" onChange={handleChange} onBlur={handleBlur}></input>
+        <input name="formValue" type="text" autoComplete="off" value={formValue} placeholder="Find Articles" onChange={handleChange} onBlur={handleBlur}></input>
         <input type="submit" onClick = {handleSubmit}/>
       </form>
     </div>

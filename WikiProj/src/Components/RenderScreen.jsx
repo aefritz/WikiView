@@ -31,7 +31,7 @@ function RenderScreen (props) {
           color: `${color}`
         }
         return(
-          <span style={styleObj} onClick={(ev) => handleClick(ev,link.value)}>{link.value + " "}</span>
+          <span style={styleObj} key={link.value} onClick={(ev) => handleClick(ev,link.value)}>{link.value + " "}</span>
         )})}
       </p>
     </div>
