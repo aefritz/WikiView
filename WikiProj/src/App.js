@@ -121,7 +121,7 @@ class App extends Component {
           <Header />
 
           <div className="navBar">
-            <Link to="/">Main</Link>
+            <Link to="/">Browse</Link>
             <Link to="/about">About</Link>
             <Link to="/challenge">Challenge</Link>
           </div>
