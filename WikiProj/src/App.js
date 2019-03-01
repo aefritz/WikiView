@@ -22,7 +22,6 @@ class App extends Component {
       linkData: [],
       focusDisplay: false,
       loading: true,
-      challenge: false,
       currentPage: "The Handmaid's Tale",
       suggestionsArray: [],
       formValue: "The Handmaid's Tale"
