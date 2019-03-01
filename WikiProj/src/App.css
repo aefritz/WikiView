@@ -10,10 +10,13 @@
 .gradient {
   margin: 0;
   padding: 10px;
+  border-radius: 10px;
   background: radial-gradient(rgba(255,255,255,1),rgba(255,255,255,.6));
 }
 .footer {
   background: rgba(208,112,208,.4);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   margin: -20px;
   margin-left: -10px;
   margin-right: -10px;
@@ -128,18 +131,12 @@ h2 {
   margin: 0;
   padding: 0;
 }
-span:hover{
-  text-decoration: underline;
-}
-
-
-
-
-
-
 h4 {
    color: black;
    letter-spacing: .05em;
    font-weight: 600;
    line-height: 20px;
+}
+span:hover{
+  text-decoration: underline;
 }
