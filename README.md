@@ -111,4 +111,4 @@ The function rearranges the elements of an array like so:
 
 This strategy allows the most important topics to appear in the middle of the cloud.
 
-One technical problem that I was unable to resolve in a
+One technical problem that I was unable to resolve for this version involved hiding the drop-down search suggestions when the text input is blurred. A blur event listener was added to the text field in the form for this specific purpose. However, it came to be that the action of the user clicking one of the topic results blurred the text field and hid the suggestions before the data from those suggestions could be returned to the global state. I tried retooling the hierarchy of the div, form, and input elements and using ev.preventDefault but this steps did not fix the problem. I ended up compromising by simply not hiding the drop-down until the user hits the submit button. I would be interested in revisiting this issue in a later update.

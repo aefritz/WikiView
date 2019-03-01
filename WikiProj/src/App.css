@@ -137,6 +137,9 @@ h4 {
    font-weight: 600;
    line-height: 20px;
 }
+span {
+  cursor: pointer;
+}
 span:hover{
   text-decoration: underline;
 }
