@@ -174,8 +174,22 @@ span:hover{
     padding-top: 15px;
   }
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 380px) {
   .navBar {
     padding: 0 10px;
+  }
+  a {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 40px;
+    letter-spacing: .10em;
+  }
+  h5 {
+    letter-spacing: .09em;
+    font-size: 8px;
+  }
+  input {
+    width: 40%;
   }
 }
