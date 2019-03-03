@@ -15,7 +15,13 @@ async function getData (article) {
   function getCounts(array, text) {
     let returnArray = array;
     returnArray.forEach(function(link) {
-      link.incidence = getStringIncidence(link.value, text);
+      try {
+        link.incidence = getStringIncidence(link.value, text);
+      }
+      catch(e) {
+        console.error(e);
+        link.incidence = 0;
+      }
     });
     return returnArray;
   }
