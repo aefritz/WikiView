@@ -173,6 +173,10 @@ span:hover{
   .renderContainer {
     padding-top: 15px;
   }
+  .loadSpiral {
+    width: 200px;
+    height: 200px;
+  }
 }
 @media only screen and (max-width: 380px) {
   .navBar {
@@ -191,5 +195,9 @@ span:hover{
   }
   input {
     width: 40%;
+  }
+  .loadSpiral {
+    width: 150px;
+    height: 150px;
   }
 }
