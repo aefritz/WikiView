@@ -27,7 +27,8 @@ function shuffle(array) {
 
 function RenderScreen (props) {
   let windowHeight = window.innerHeight - 280;
-  let matches = useMediaQuery('(max-width:720px)');
+  let matchesLevelOne = useMediaQuery('(max-width:720px)');
+  let matchesLevelTwo = useMediaQuery('(min-width:570px)');
   let {linkData, formValue, handleClick} = props;
   linkData = linkData.map(link => {
     let percentile = 100*linkData.indexOf(link)/linkData.length;
@@ -54,7 +55,7 @@ function RenderScreen (props) {
       fontSize: `${10+(40/(0.1*percentile+0.9))}px`,
       color: `${color}`
     };
-    if (matches) {
+    if (matchesLevelOne) {
       styleObj = {
         fontSize: `${10+(15/(0.1*percentile+0.9))}px`,
         color: `${color}`
@@ -62,7 +63,9 @@ function RenderScreen (props) {
     }
     return {value: link.value, style: styleObj};
   });
-  linkData = shuffle(linkData);
+  if (matchesLevelTwo) {
+    linkData = shuffle(linkData);
+  }
   return (
     <div className="renderContainer" style={{minHeight: windowHeight}}>
       {linkData.map(link => <span style={link.style} key={link.value} onClick={(ev) => handleClick(ev,link.value)}>{link.value + "  "}</span>)}
