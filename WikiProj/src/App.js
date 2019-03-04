@@ -83,6 +83,7 @@ class App extends Component {
   }
 
   handleSubmit (ev) {
+    ev.preventDefault();
     let value = this.state.formValue;
     this.setState({
       focusDisplay: false,
