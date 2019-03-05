@@ -76,10 +76,13 @@ class App extends Component {
     }
   }
 
-  handleClick(ev,value) {
+  handleClick (ev,value) {
     this.setState({
-      formValue: value
+      formValue: value,
+      focusDisplay: false,
+      currentPage: value
     })
+    this.fetchData();
   }
 
   handleSubmit (ev) {
